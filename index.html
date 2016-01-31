@@ -1,0 +1,40 @@
+<html>
+
+  <head>
+    <title>Ha Ngu, App</title>
+
+    <link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="app/stylesheet/style.css">
+
+    <script>document.write('<base href="' + document.location + '" />');</script>
+
+    <script src="node_modules/es6-shim/es6-shim.js"></script>
+    <script src="node_modules/systemjs/dist/system-polyfills.src.js"></script>
+
+    <script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
+    <script src="node_modules/systemjs/dist/system.src.js"></script>
+    <script src="node_modules/rxjs/bundles/Rx.js"></script>
+    <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
+    <script src="node_modules/angular2/bundles/router.dev.js"></script>
+    <script src="node_modules/moment/moment.js"></script>
+
+    <script>
+      System.config({
+        transpiler: 'typescript',
+        typescriptOptions: { emitDecoratorMetadata: true },
+        packages: {'app': {defaultExtension: 'js'}} ,
+        paths: {
+          'moment': 'node_modules/moment/moment.js'
+        }
+      });
+      System.import('app/boot')
+        .then(null, console.error.bind(console));
+    </script>
+
+  </head>
+
+  <body>
+    <hangu>Loading...</hangu>
+  </body>
+
+</html>
